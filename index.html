@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Football Dashboard</title>
+    <style>
+        body {
+            background-color: #d4e4d2; /* Pale forest green */
+            color: #2e4b32; /* Darker green for text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .stat-box {
+            background-color: #f0f4f0;
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .stat-box h2 {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fantasy Football Stats Dashboard</h1>
+
+    <div id="stats-container">
+        <div class="stat-box">
+            <h2>Your Team</h2>
+            <p><strong>Name:</strong> The Winning Squad</p>
+            <p><strong>Points:</strong> 1020.5</p>
+            <p><strong>Rank:</strong> 3rd</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>Next Matchup</h2>
+            <p><strong>Opponent:</strong> Gridiron Warriors</p>
+            <p><strong>Projected Points:</strong> 110.3</p>
+            <p><strong>Matchup Date:</strong> 10/08/2024</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>Recent Activity</h2>
+            <p><strong>Last Game:</strong> Win</p>
+            <p><strong>Points Scored:</strong> 135.7</p>
+            <p><strong>Standout Player:</strong> DJ Moore - 27.5 Pts</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Powered by Yahoo Fantasy Sports API</p>
+    </footer>
+
+    <script>
+        // Simulating fetching data from an API
+        // This would actually come from a backend that communicates with Yahoo's API
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate fetching stats
+            const stats = {
+                teamName: 'The Winning Squad',
+                points: 1020.5,
+                rank: '3rd',
+                nextOpponent: 'Gridiron Warriors',
+                nextMatchupDate: '10/08/2024',
+                projectedPoints: 110.3,
+                lastGameResult: 'Win',
+                lastGamePoints: 135.7,
+                standoutPlayer: 'DJ Moore',
+                standoutPlayerPoints: 27.5
+            };
+
+            // Simulate updating the DOM with the fetched data
+            document.querySelector('.stat-box:nth-child(1) p:nth-child(2)').innerHTML = `<strong>Name:</strong> ${stats.teamName}`;
+            document.querySelector('.stat-box:nth-child(1) p:nth-child(3)').innerHTML = `<strong>Points:</strong> ${stats.points}`;
+            document.querySelector('.stat-box:nth-child(1) p:nth-child(4)').innerHTML = `<strong>Rank:</strong> ${stats.rank}`;
+
+            document.querySelector('.stat-box:nth-child(2) p:nth-child(2)').innerHTML = `<strong>Opponent:</strong> ${stats.nextOpponent}`;
+            document.querySelector('.stat-box:nth-child(2) p:nth-child(3)').innerHTML = `<strong>Projected Points:</strong> ${stats.projectedPoints}`;
+            document.querySelector('.stat-box:nth-child(2) p:nth-child(4)').innerHTML = `<strong>Matchup Date:</strong> ${stats.nextMatchupDate}`;
+
+            document.querySelector('.stat-box:nth-child(3) p:nth-child(2)').innerHTML = `<strong>Last Game:</strong> ${stats.lastGameResult}`;
+            document.querySelector('.stat-box:nth-child(3) p:nth-child(3)').innerHTML = `<strong>Points Scored:</strong> ${stats.lastGamePoints}`;
+            document.querySelector('.stat-box:nth-child(3) p:nth-child(4)').innerHTML = `<strong>Standout Player:</strong> ${stats.standoutPlayer} - ${stats.standoutPlayerPoints} Pts`;
+        });
+    </script>
+
+</body>
+</html>
